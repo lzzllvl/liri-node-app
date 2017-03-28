@@ -27,6 +27,24 @@ var getTweets = () => {
 
 var getMovie = (movieName="Mr. Nobody") => {
   console.log("running getMovie(" + movieName + ")");
+  movieName  = movieName.replace(" ", "+");
+  var url = "http://www.omdbapi.com/?t=" + movieName;
+  request(url, (err, res, body) => {
+    if(!err && res.statusCode === 200){
+      var mov = JSON.parse(body);
+      var rottenTomatoes = mov.Ratings[1].Value;
+      console.log(mov.Title, mov.Year);
+      console.log(mov.imdbRating);
+      console.log(mov.Country);
+      console.log(mov.Language);
+      console.log(mov.Plot);
+      console.log(mov.Actors);
+      console.log("Rotten Tomatoes - " + rottenTomatoes);
+
+    } else {
+      console.log(err);
+    }
+  })
 }
 
 var spotifyThis = (songName="The Sign") => {
