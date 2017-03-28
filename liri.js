@@ -1,8 +1,9 @@
 /**
- * Node App For the interacting with twitter, spotify and omdb from the command
- * line. Accepts Command line arguments in the format
- * `node liri.js <function> "<arguments>"`
- * Author - Gregory Lee for UCSD Coding bootcamp
+ * Node App For the interacting with twitter, spotify and omdb from
+ * the command line. Accepts Command line arguments in the format
+ *    `node liri.js <function> "<arguments>"`
+ * See package.json for dependencies and other information
+ * Author - Gregory Lee for UCSD Coding Bootcamp.
  */
 
 
@@ -24,11 +25,11 @@ var getTweets = () => {
   console.log("running getTweets()");
 }
 
-var getMovie = (movieName) => {
+var getMovie = (movieName="Mr. Nobody") => {
   console.log("running getMovie(" + movieName + ")");
 }
 
-var spotifyThis = (songName) => {
+var spotifyThis = (songName="The Sign") => {
   console.log("running spotifyThis(" + songName + ")");
 }
 
